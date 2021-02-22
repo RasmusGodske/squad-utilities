@@ -27,10 +27,16 @@
             v-for="(item, i) in vehicles"
             :key="i"
           >
-            <v-list-item class="vehicle-list-item">
+            <v-list-item
+              class="vehicle-list-item"
+              link
+              :to="'/vehicle/'+item.name"
+            >
+              <!-- <router-link :to="{ name: 'vehicle', params: { id: 123 }}"> -->
               <v-list-item-content>
                 <v-list-item-title v-text="item.name"></v-list-item-title>
               </v-list-item-content>
+              <!-- </router-link> -->
 
               <v-spacer />
               <v-img
@@ -40,8 +46,8 @@
                 :src="item.imageUrl"
               ></v-img>
             </v-list-item>
-              <v-divider class="vehicle-list-divider"></v-divider>
-            
+            <v-divider class="vehicle-list-divider"></v-divider>
+
           </div>
         </v-list-item-group>
       </v-list>
@@ -77,7 +83,7 @@ export default {
 
 .vehicle-list-item {
   padding-top: 16px;
-  padding-bottom:16px;
+  padding-bottom: 16px;
 }
 
 .vehicle-list-divider {

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <v-main>
       <v-container>
         <v-row
           justify="center"
@@ -23,7 +22,6 @@
         </v-row>
 
       </v-container>
-    </v-main>
   </div>
 </template>
 
