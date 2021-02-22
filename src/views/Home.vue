@@ -1,18 +1,56 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <v-main>
+      <v-container>
+        <v-row
+          justify="center"
+          align-self="center"
+        >
+          <v-col
+            cols="12"
+            sm="6"
+            md="4"
+            align-self="stretch"
+            v-for="(value, name) in factions"
+            :key="name"
+          >
+            <faction-vehicle-list
+              :faction-name="value.name"
+              :flag-image="value.flag"
+              :vehicles="value.vehicles"
+            />
+          </v-col>
+        </v-row>
+
+      </v-container>
+    </v-main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import FactionVehicleList from "@/components/FactionVehicleList.vue";
+import factionsJson from "@/assets/factions.json";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
-  }
+    FactionVehicleList,
+  },
+  data: () => {
+    return {
+      factions: {},
+    };
+  },
+  created: function () {
+    this.factions = factionsJson;
+    // console.log(this.factions.us.vehicles)
+    console.log(this.factions);
+  },
 };
 </script>
+
+<style scoped>
+.text-right .v-image {
+  display: inline-block;
+}
+</style>

@@ -1,0 +1,87 @@
+<template>
+  <v-card
+    flat
+    tile
+    elevation="4"
+    height="100%"
+  >
+    <v-toolbar color="primary">
+      <v-toolbar-title>{{factionName}}</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-img
+        class="ml-auto"
+        max-height="80px"
+        max-width="90px"
+        contain
+        :src="flagImage"
+      ></v-img>
+    </v-toolbar>
+
+    <v-card-text>
+      <v-list
+        class="vehicle-list"
+        flat
+      >
+        <v-list-item-group color="primary">
+          <div
+            v-for="(item, i) in vehicles"
+            :key="i"
+          >
+            <v-list-item class="vehicle-list-item">
+              <v-list-item-content>
+                <v-list-item-title v-text="item.name"></v-list-item-title>
+              </v-list-item-content>
+
+              <v-spacer />
+              <v-img
+                class="ml-auto"
+                max-width="150px"
+                contain
+                :src="item.imageUrl"
+              ></v-img>
+            </v-list-item>
+              <v-divider class="vehicle-list-divider"></v-divider>
+            
+          </div>
+        </v-list-item-group>
+      </v-list>
+
+    </v-card-text>
+  </v-card>
+</template>
+
+<script>
+export default {
+  name: "FactionVehicleList",
+  props: {
+    factionName: String,
+    flagImage: String,
+    vehicles: Array,
+  },
+  components: {
+    // HelloWorlds
+  },
+
+  mounted: function () {
+    // console.log("test");
+    // console.log(this.$props.vehicles);
+    // console.log(this.vehicles);
+  },
+};
+</script>
+
+<style scoped>
+.vehicle-list {
+  background: none !important;
+}
+
+.vehicle-list-item {
+  padding-top: 16px;
+  padding-bottom:16px;
+}
+
+.vehicle-list-divider {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+</style>

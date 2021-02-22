@@ -1,0 +1,104 @@
+{
+  "us": {
+    "name": "US",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/us-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "uk": {
+    "name": "British",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/uk-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "rus": {
+    "name": "Russian",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/russian-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "ca": {
+    "name": "Canadian",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/canadian-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "irregularmilitia": {
+    "name": "Irregular Militia",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/irregularmelitia-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "insurgent": {
+    "name": "Insurgent",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/insurgents-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  },
+  "mea": {
+    "name": "Middle Eastern Alliance",
+    "flag": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/faction-flags/mea-flag.png",
+    "vehicles": [
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      },
+      {
+        "name": "MATV",
+        "imageUrl": "https://squad-vehicle-guide-assets.s3-eu-west-1.amazonaws.com/images/vehicles/MATV/Real/MATV-real-left.png"
+      }
+    ]
+  }
+}
