@@ -30,7 +30,7 @@
             <v-list-item
               class="vehicle-list-item"
               link
-              :to="'/vehicle/'+item.name"
+              :to="'/vehicle/'+item.id"
             >
               <!-- <router-link :to="{ name: 'vehicle', params: { id: 123 }}"> -->
               <v-list-item-content>
@@ -43,7 +43,7 @@
                 class="ml-auto"
                 max-width="150px"
                 contain
-                :src="item.imageUrl"
+                :src="item.thumbnail"
               ></v-img>
             </v-list-item>
             <v-divider class="vehicle-list-divider"></v-divider>
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: "FactionVehicleList",
   props: {
@@ -64,15 +66,7 @@ export default {
     flagImage: String,
     vehicles: Array,
   },
-  components: {
-    // HelloWorlds
-  },
 
-  mounted: function () {
-    // console.log("test");
-    // console.log(this.$props.vehicles);
-    // console.log(this.vehicles);
-  },
 };
 </script>
 

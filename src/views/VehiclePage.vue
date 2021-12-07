@@ -14,18 +14,26 @@
 
         <v-card-text>
           <v-row justify="center">
-            <v-col cols="5">
+            <v-col cols="6">
               <v-img
                 class="ml-auto"
+                rel="preload"
                 contain
-                :src="vehicleViews[selectedView].armourModel"
+                v-for="(image, side) in vehicle.model.real"
+                :key="image"
+                v-show="side == selectedView"
+                :src="image"
               ></v-img>
             </v-col>
-            <v-col cols="5">
+            <v-col cols="6">
               <v-img
                 class="ml-auto"
+                rel="preload"
                 contain
-                :src="vehicleViews[selectedView].real"
+                v-for="(image, side) in vehicle.model.armour"
+                :key="image"
+                v-show="side == selectedView"
+                :src="image"
               ></v-img>
             </v-col>
           </v-row>
@@ -38,16 +46,16 @@
                 class="ml-auto view-side-image-btn"
                 contain
                 height="100"
-                :src="vehicle.images.real.right"
+                :src="vehicle.model.real.right"
                 v-on:click="selectedView='right'"
               ></v-img>
             </v-col>
-            <v-col cols="2" class="view-side-image-col">
+             <v-col cols="2" class="view-side-image-col">
               <v-img
                 class="ml-auto view-side-image-btn"
                 contain
                 height="100"
-                :src="vehicle.images.real.left"
+                :src="vehicle.model.real.left"
                 v-on:click="selectedView='left'"
               ></v-img>
             </v-col>
@@ -56,7 +64,7 @@
                 class="ml-auto view-side-image-btn"
                 contain
                 height="100"
-                :src="vehicle.images.real.back"
+                :src="vehicle.model.real.back"
                 v-on:click="selectedView='back'"
               ></v-img>
             </v-col>
@@ -65,7 +73,7 @@
                 class="ml-auto view-side-image-btn"
                 contain
                 height="100"
-                :src="vehicle.images.real.front"
+                :src="vehicle.model.real.front"
                 v-on:click="selectedView='front'"
               ></v-img>
             </v-col>
@@ -74,7 +82,7 @@
                 class="ml-auto view-side-image-btn"
                 contain
                 height="100"
-                :src="vehicle.images.real.top"
+                :src="vehicle.model.real.top"
                 v-on:click="selectedView='top'"
               ></v-img>
             </v-col>
@@ -88,6 +96,8 @@
 <script>
 import vehicleJson from "@/assets/vehicles.json";
 
+import VehicleRepo from "@/services/VehicleRepo";
+
 export default {
   name: "Home",
   components: {},
@@ -99,33 +109,35 @@ export default {
     };
   },
   created: function () {
+      // this.vehicle = vehicleJson[this.$route.params.id];
     console.log(this.$route.params.id);
-    console.log(vehicleJson);
-    this.vehicle = vehicleJson[this.$route.params.id];
-    console.log(this.vehicle);
+    this.vehicle = VehicleRepo.getVehicleByID(this.$route.params.id);
+    console.log("this.vehicle", this.vehicle);
+
+
   },
   computed: {
     vehicleViews: function () {
       const obj = {
         left: {
-          real: this.vehicle.images.real.left,
-          armourModel: this.vehicle.images.armourModel.left,
+          real: this.vehicle.model.real.left,
+          armourModel: this.vehicle.model.armour.left,
         },
         right: {
-          real: this.vehicle.images.real.right,
-          armourModel: this.vehicle.images.armourModel.right,
+          real: this.vehicle.model.real.right,
+          armourModel: this.vehicle.model.armour.right,
         },
         front: {
-          real: this.vehicle.images.real.front,
-          armourModel: this.vehicle.images.armourModel.front,
+          real: this.vehicle.model.real.front,
+          armourModel: this.vehicle.model.armour.front,
         },
         back: {
-          real: this.vehicle.images.real.back,
-          armourModel: this.vehicle.images.armourModel.back,
+          real: this.vehicle.model.real.back,
+          armourModel: this.vehicle.model.armour.back,
         },
         top: {
-          real: this.vehicle.images.real.top,
-          armourModel: this.vehicle.images.armourModel.top,
+          real: this.vehicle.model.real.top,
+          armourModel: this.vehicle.model.armour.top,
         },
       };
       console.log(obj);

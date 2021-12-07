@@ -8,14 +8,14 @@
           <v-col
             cols="12"
             sm="6"
-            md="4"
+            md="6"
             align-self="stretch"
             v-for="(value, name) in factions"
             :key="name"
           >
             <faction-vehicle-list
-              :faction-name="value.name"
-              :flag-image="value.flag"
+              :faction-name="value.faction.name"
+              :flag-image="value.faction.flag_image"
               :vehicles="value.vehicles"
             />
           </v-col>
@@ -27,7 +27,9 @@
 
 <script>
 import FactionVehicleList from "@/components/FactionVehicleList.vue";
-import factionsJson from "@/assets/factions.json";
+import FactionsRepo from "@/services/FactionsRepo";
+import VehicleRepo from '@/services/VehicleRepo';
+
 
 export default {
   name: "Home",
@@ -36,13 +38,20 @@ export default {
   },
   data: () => {
     return {
-      factions: {},
+      factions: [],
     };
   },
   created: function () {
-    this.factions = factionsJson;
-    // console.log(this.factions.us.vehicles)
-    console.log(this.factions);
+    const factions = FactionsRepo.factions;
+
+    for (const faction of factions) {
+        const factionVehicles = VehicleRepo.getVehiclesInFaction(faction.id);
+
+        this.factions.push({
+            faction: faction,
+            vehicles: factionVehicles,
+        })
+    }
   },
 };
 </script>
