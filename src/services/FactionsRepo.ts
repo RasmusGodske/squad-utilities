@@ -1,7 +1,7 @@
 import factionsJson from "@/assets/factions.json";
 import { FactionModel } from "../models/faction.model";
 
-const BASE_URL = "http://localhost:9090";
+const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
 const MissingImage = "/missing-image.png";
 
 class FactionsRepo {
