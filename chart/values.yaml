@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: godske/squad-vehicle-guide
-  tag: v0.0.11
+  tag: v0.0.12
   pullPolicy: IfNotPresent
 
 service:
@@ -12,4 +12,4 @@ service:
 
 ingressRoute:
   route:
-    host: squad.cluster.gheotic.com
+    host: localhost
