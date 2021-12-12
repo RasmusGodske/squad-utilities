@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: godske/squad-vehicle-guide
+  tag: v0.0.11
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  # Port container listens to
+  targetPort: 8080
+
+ingressRoute:
+  route:
+    host: squad.cluster.gheotic.com
