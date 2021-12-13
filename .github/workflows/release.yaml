@@ -4,6 +4,8 @@ name: Release
 env:
   DOCKER_IMAGE: godske/squad-vehicle-guide
   HELM_CHART_PATH:  "chart/values.yaml"
+
+  JOB_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 on:
   push:
     branches:
