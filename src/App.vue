@@ -26,7 +26,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        to="https://github.com/RasmusGodske/squad-utilities"
+        href="https://github.com/RasmusGodske/squad-utilities"
         text
       > 
         <span class="mr-2">Source Code</span>
