@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: godske/squad-vehicle-guide
-  tag: v0.0.12
+  tag: v0.0.13
   pullPolicy: IfNotPresent
 
 service:
