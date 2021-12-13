@@ -1,32 +1,32 @@
 {
     "us": {
         "name": "US",
-        "flag": "/faction-flags/us-flag.png"
+        "flag": "/faction-flags/us-flag.jpg"
     },
     "uk": {
         "name": "British",
-        "flag": "/faction-flags/uk-flag.png"
+        "flag": "/faction-flags/uk-flag.jpg" 
     },
     "rus": {
         "name": "Russian",
-        "flag": "/faction-flags/russian-flag.png"
+        "flag": "/faction-flags/russian-flag.jpg"
 
     },
     "ca": {
         "name": "Canadian",
-        "flag": "/faction-flags/canadian-flag.png"
+        "flag": "/faction-flags/canadian-flag.jpg"
     },
     "irregularmilitia": {
         "name": "Irregular Militia",
-        "flag": "/faction-flags/irregularmelitia-flag.png"
+        "flag": "/faction-flags/irregularmelitia-flag.jpg"
 
     },
     "insurgent": {
         "name": "Insurgent",
-        "flag": "/faction-flags/insurgents-flag.png"
+        "flag": "/faction-flags/insurgents-flag.jpg"
     },
     "mea": {
         "name": "Middle Eastern Alliance",
-        "flag": "/faction-flags/mea-flag.png"
+        "flag": "/faction-flags/mea-flag.jpg"
     }
 }

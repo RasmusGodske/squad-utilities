@@ -8,7 +8,7 @@ import { FactionModel } from '../models/faction.model';
 
 const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
 
-const MissingImage = "/missing-image.png";
+const MissingImage = "/missing-image.jpg";
 
 
 class VehicleRepo {

@@ -1,17 +1,17 @@
 {
   "MATV": {
     "name": "MATV",
-    "thumbnail": "/vehicles/MATV/Real/MATV-real-left.png",
+    "thumbnail": "/vehicles/MATV/Real/MATV-real-left.jpg",
     "factions": [
         "us"
     ],
     "images": {
       "real": {
-        "back": "/vehicles/MATV/Real/MATV-real-back.png",
-        "front": "/vehicles/MATV/Real/MATV-real-front.png",
-        "right": "/vehicles/MATV/Real/MATV-real-right.png",
-        "left": "/vehicles/MATV/Real/MATV-real-left.png",
-        "top": "/vehicles/MATV/Real/MATV-real-top.png"
+        "back": "/vehicles/MATV/Real/MATV-real-back.jpg",
+        "front": "/vehicles/MATV/Real/MATV-real-front.jpg",
+        "right": "/vehicles/MATV/Real/MATV-real-right.jpg",
+        "left": "/vehicles/MATV/Real/MATV-real-left.jpg",
+        "top": "/vehicles/MATV/Real/MATV-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/MATV/weakpoints/MATV-3d-back.jpg",
@@ -24,17 +24,17 @@
   },
   "M1126": {
     "name": "M1126",
-    "thumbnail": "/vehicles/M1126/real/M1126-real-left.png",
+    "thumbnail": "/vehicles/M1126/real/M1126-real-left.jpg",
     "factions": [
         "us"
     ],
     "images": {
       "real": {
-        "back": "/vehicles/M1126/real/M1126-real-back.png",
-        "front": "/vehicles/M1126/real/M1126-real-front.png",
-        "right": "/vehicles/M1126/real/M1126-real-right.png",
-        "left": "/vehicles/M1126/real/M1126-real-left.png",
-        "top": "/vehicles/M1126/real/M1126-real-top.png"
+        "back": "/vehicles/M1126/real/M1126-real-back.jpg",
+        "front": "/vehicles/M1126/real/M1126-real-front.jpg",
+        "right": "/vehicles/M1126/real/M1126-real-right.jpg",
+        "left": "/vehicles/M1126/real/M1126-real-left.jpg",
+        "top": "/vehicles/M1126/real/M1126-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/M1126/weakpoints/M1126-3d-back.jpg",
@@ -162,7 +162,7 @@
   },
   "BRDM-2": {
     "name": "BRDM-2",
-    "thumbnail": "/vehicles/BRDM-2/real/BRDM-2-real-left.png",
+    "thumbnail": "/vehicles/BRDM-2/real/BRDM-2-real-left.jpg",
     "factions": [
         "rus",
         "irregularmilitia",
@@ -171,11 +171,11 @@
     ],
     "images": {
       "real": {
-        "back": "/vehicles/BRDM-2/real/BRDM-2-real-back.png",
-        "front": "/vehicles/BRDM-2/real/BRDM-2-real-front.png",
-        "right": "/vehicles/BRDM-2/real/BRDM-2-real-right.png",
-        "left": "/vehicles/BRDM-2/real/BRDM-2-real-left.png",
-        "top": "/vehicles/BRDM-2/real/BRDM-2-real-top.png"
+        "back": "/vehicles/BRDM-2/real/BRDM-2-real-back.jpg",
+        "front": "/vehicles/BRDM-2/real/BRDM-2-real-front.jpg",
+        "right": "/vehicles/BRDM-2/real/BRDM-2-real-right.jpg",
+        "left": "/vehicles/BRDM-2/real/BRDM-2-real-left.jpg",
+        "top": "/vehicles/BRDM-2/real/BRDM-2-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/BRDM-2/weakpoints/BRDM-2-3d-back.jpg",
@@ -291,11 +291,11 @@
     ],
     "images": {
       "real": {
-        "back": "/vehicles/BMP-1/real/BMP-1-real-back.png",
-        "front": "/vehicles/BMP-1/real/BMP-1-real-front.png",
-        "right": "/vehicles/BMP-1/real/BMP-1-real-right.png",
+        "back": "/vehicles/BMP-1/real/BMP-1-real-back.jpg",
+        "front": "/vehicles/BMP-1/real/BMP-1-real-front.jpg",
+        "right": "/vehicles/BMP-1/real/BMP-1-real-right.jpg",
         "left": null,
-        "top": "/vehicles/BMP-1/real/BMP-1-real-top.png"
+        "top": "/vehicles/BMP-1/real/BMP-1-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/BMP-1/weakpoints/BMP-1-3d-back.jpg",
@@ -308,18 +308,18 @@
   },
   "T72B3": {
     "name": "T72B3",
-    "thumbnail": "/vehicles/T72B3/real/T-72B3-real-left.png",
+    "thumbnail": "/vehicles/T72B3/real/T-72B3-real-left.jpg",
     "factions": [
         "rus",
         "mea"
     ],
     "images": {
       "real": {
-        "back": "/vehicles/T72B3/real/T-72B3-real-back.png",
-        "front": "/vehicles/T72B3/real/T-72B3-real-front.png",
-        "right": "/vehicles/T72B3/real/T-72B3-real-right.png",
-        "left": "/vehicles/T72B3/real/T-72B3-real-left.png",
-        "top": "/vehicles/T72B3/real/T-72B3-real-top.png"
+        "back": "/vehicles/T72B3/real/T-72B3-real-back.jpg",
+        "front": "/vehicles/T72B3/real/T-72B3-real-front.jpg",
+        "right": "/vehicles/T72B3/real/T-72B3-real-right.jpg",
+        "left": "/vehicles/T72B3/real/T-72B3-real-left.jpg",
+        "top": "/vehicles/T72B3/real/T-72B3-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/T72B3/weakpoints/T-72B3-3d-back.jpg",
@@ -332,18 +332,18 @@
   },
   "Armoured_technical":{
     "name": "Armoured Technical",
-    "thumbnail": "/vehicles/Armoured_technical/real/armouredTechnical-real-left.png",
+    "thumbnail": "/vehicles/Armoured_technical/real/armouredTechnical-real-left.jpg",
     "factions": [
         "irregularmilitia",
         "insurgent"
     ],
     "images": {
       "real": {
-        "back": "/vehicles/Armoured_technical/real/armouredTechnical-real-back.png",
-        "front": "/vehicles/Armoured_technical/real/armouredTechnical-real-front.png",
-        "right": "/vehicles/Armoured_technical/real/armouredTechnical-real-right.png",
-        "left": "/vehicles/Armoured_technical/real/armouredTechnical-real-left.png",
-        "top": "/vehicles/Armoured_technical/real/armouredTechnical-real-top.png"
+        "back": "/vehicles/Armoured_technical/real/armouredTechnical-real-back.jpg",
+        "front": "/vehicles/Armoured_technical/real/armouredTechnical-real-front.jpg",
+        "right": "/vehicles/Armoured_technical/real/armouredTechnical-real-right.jpg",
+        "left": "/vehicles/Armoured_technical/real/armouredTechnical-real-left.jpg",
+        "top": "/vehicles/Armoured_technical/real/armouredTechnical-real-top.jpg"
       },
       "armourModel": {
         "back": "/vehicles/Armoured_technical/weakpoints/armouredTechnical-3d-back.jpg",
