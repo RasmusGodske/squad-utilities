@@ -14,11 +14,11 @@
         "top": "/vehicles/MATV/Real/MATV-real-top.jpg"
       },
       "armourModel": {
-        "back": "/vehicles/MATV/weakpoints/MATV-3d-back.jpg",
-        "front": "/vehicles/MATV/weakpoints/MATV-3d-front.jpg",
-        "right": "/vehicles/MATV/weakpoints/MATV-3d-right.jpg",
-        "left": "/vehicles/MATV/weakpoints/MATV-3d-left.jpg",
-        "top": "/vehicles/MATV/weakpoints/MATV-3d-top.jpg"
+        "back": "/vehicles/MATV/armour/MATV-armour-back.jpg",
+        "front": "/vehicles/MATV/armour/MATV-armour-front.jpg",
+        "right": "/vehicles/MATV/armour/MATV-armour-right.jpg",
+        "left": "/vehicles/MATV/armour/MATV-armour-left.jpg",
+        "top": "/vehicles/MATV/armour/MATV-armour-top.jpg"
       }
     }
   },
@@ -37,11 +37,11 @@
         "top": "/vehicles/M1126/real/M1126-real-top.jpg"
       },
       "armourModel": {
-        "back": "/vehicles/M1126/weakpoints/M1126-3d-back.jpg",
-        "front": "/vehicles/M1126/weakpoints/M1126-3d-front.jpg",
-        "right": "/vehicles/M1126/weakpoints/M1126-3d-right.jpg",
-        "left": "/vehicles/M1126/weakpoints/M1126-3d-left.jpg",
-        "top": "/vehicles/M1126/weakpoints/M1126-3d-top.jpg"
+        "back": "/vehicles/M1126/armour/M1126-armour-back.jpg",
+        "front": "/vehicles/M1126/armour/M1126-armour-front.jpg",
+        "right": "/vehicles/M1126/armour/M1126-armour-right.jpg",
+        "left": "/vehicles/M1126/armour/M1126-armour-left.jpg",
+        "top": "/vehicles/M1126/armour/M1126-armour-top.jpg"
       }
     }
   },
@@ -60,11 +60,11 @@
         "top": "/vehicles/M2A3/Real/M2A3-real-top.jpg"
       },
       "armourModel": {
-        "back": "/vehicles/M2A3/weakpoints/M2A3-3d-back.jpg",
-        "front": "/vehicles/M2A3/weakpoints/M2A3-3d-front.jpg",
-        "right": "/vehicles/M2A3/weakpoints/M2A3-3d-right.jpg",
-        "left": "/vehicles/M2A3/weakpoints/M2A3-3d-left.jpg",
-        "top": "/vehicles/M2A3/weakpoints/M2A3-3d-top.jpg"
+        "back": "/vehicles/M2A3/armour/M2A3-armour-back.jpg",
+        "front": "/vehicles/M2A3/armour/M2A3-armour-front.jpg",
+        "right": "/vehicles/M2A3/armour/M2A3-armour-right.jpg",
+        "left": "/vehicles/M2A3/armour/M2A3-armour-left.jpg",
+        "top": "/vehicles/M2A3/armour/M2A3-armour-top.jpg"
       }
     }
   },
@@ -83,11 +83,11 @@
         "top": "/vehicles/M1A2/Real/M1A2-real-top.jpg"
       },
       "armourModel": {
-        "back": "/vehicles/M1A2/weakpoints/M1A2-3d-back.jpg",
-        "front": "/vehicles/M1A2/weakpoints/M1A2-3d-front.jpg",
-        "right": "/vehicles/M1A2/weakpoints/M1A2-3d-right.jpg",
-        "left": "/vehicles/M1A2/weakpoints/M1A2-3d-left.jpg",
-        "top": "/vehicles/M1A2/weakpoints/M1A2-3d-top.jpg"
+        "back": "/vehicles/M1A2/armour/M1A2-armour-back.jpg",
+        "front": "/vehicles/M1A2/armour/M1A2-armour-front.jpg",
+        "right": "/vehicles/M1A2/armour/M1A2-armour-right.jpg",
+        "left": "/vehicles/M1A2/armour/M1A2-armour-left.jpg",
+        "top": "/vehicles/M1A2/armour/M1A2-armour-top.jpg"
       }
     }
   },
