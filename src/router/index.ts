@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import VehiclePage from "../views/VehiclePage.vue";
 
 Vue.use(VueRouter);
 
@@ -28,9 +29,9 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "vehpage" */ "../views/VehiclePage.vue"),
     props: {
-      
+
     }
-  },
+  }
 ];
 
 const router = new VueRouter({

@@ -30,7 +30,7 @@
             <v-list-item
               class="vehicle-list-item"
               link
-              :to="'/vehicle/'+item.id"
+              :to="'/vehicle/'+item.name"
             >
               <!-- <router-link :to="{ name: 'vehicle', params: { id: 123 }}"> -->
               <v-list-item-content>
@@ -43,8 +43,7 @@
                 class="ml-auto"
                 max-width="150px"
                 contain
-                :src="item.thumbnail"
-                @error="setAltImg"
+                :src="item.imageUrl"
               ></v-img>
             </v-list-item>
             <v-divider class="vehicle-list-divider"></v-divider>
@@ -65,12 +64,14 @@ export default {
     flagImage: String,
     vehicles: Array,
   },
-  methods: {
-    setAltImg(e) {
-      console.log(e);
-      e.target.src =
-        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
-    },
+  components: {
+    // HelloWorlds
+  },
+
+  mounted: function () {
+    // console.log("test");
+    // console.log(this.$props.vehicles);
+    // console.log(this.vehicles);
   },
 };
 </script>
