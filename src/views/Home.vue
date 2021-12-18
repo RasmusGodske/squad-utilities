@@ -102,7 +102,7 @@
 <script>
 import FactionVehicleList from "@/components/FactionVehicleList.vue";
 import FactionsRepo from "@/services/FactionsRepo";
-import VehicleRepo from "@/services/VehicleRepo";
+
 
 export default {
   name: "Home",
@@ -118,7 +118,7 @@ export default {
     const factions = FactionsRepo.factions;
 
     for (const faction of factions) {
-      const factionVehicles = VehicleRepo.getVehiclesInFaction(faction.id);
+      const factionVehicles = this.$vehicleRepo.getVehiclesInFaction(faction.id);
 
       this.factions.push({
         faction: faction,
