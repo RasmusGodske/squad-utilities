@@ -1,12 +1,15 @@
 import factionsJson from "@/assets/factions.json";
 import { FactionModel } from "../models/faction.model";
 
-const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
-const MissingImage = "/missing-image.jpg";
-
-class FactionsRepo {
+export default class FactionsRepo {
     private _factions: FactionModel[] = [];
-    constructor() {
+    private _BASE_URL: string;
+    private _missingImage: string;
+
+    constructor(BASE_URL: string) {
+        this._BASE_URL = BASE_URL;
+        this._missingImage = `${BASE_URL}/missing-image.jpg`;
+
         for (const [key, value] of Object.entries(factionsJson)) {
 
             const entry = value as {
@@ -17,7 +20,7 @@ class FactionsRepo {
             const id = key;
             const name = entry.name;
             const flag_image = entry.flag; // eslint-disable-line
-            const flagUrl = flag_image ? flag_image : MissingImage; // eslint-disable-line
+            const flagUrl = flag_image ? flag_image : this._missingImage; // eslint-disable-line
 
             this._factions.push({
                 id: id as string,
@@ -36,5 +39,3 @@ class FactionsRepo {
         return this._factions.find(faction => faction.id === id);
     }
 }
-
-export default new FactionsRepo();

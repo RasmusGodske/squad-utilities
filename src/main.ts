@@ -13,14 +13,19 @@ Vue.use(VueSimpleMarkdown)
 Vue.config.productionTip = false;
 
 import VehicleRepo from "@/services/VehicleRepo";
+import FactionsRepo from "@/services/FactionsRepo";
 
 
-const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
+const BASE_URL = process.env.VUE_APP_RESOURCE_BASE_URL;
+console.log(process.env.NODE_ENV);
+console.log(BASE_URL);
 // const BASE_URL = "http://localhost:8081";
 
-const vehicleRepo = new VehicleRepo(BASE_URL);
+const factionsRepo = new FactionsRepo(BASE_URL);
+const vehicleRepo = new VehicleRepo(BASE_URL, factionsRepo);
 
 Vue.prototype.$vehicleRepo = vehicleRepo;
+Vue.prototype.$factionsRepo = factionsRepo;
 
 new Vue({
   router,
