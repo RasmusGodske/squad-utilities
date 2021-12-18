@@ -6,8 +6,8 @@ import FactionsRepo from '@/services/FactionsRepo';
 import { VehicleImageModel } from '../models/vehicle.model';
 import { FactionModel } from '../models/faction.model';
 
-// const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
-const BASE_URL = "http://localhost:8081";
+const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
+// const BASE_URL = "http://localhost:8081";
 
 const MissingImage = `${BASE_URL}/missing-image.jpg`;
 
