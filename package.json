@@ -5,14 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "predeploy": "deploy-aws-s3-cloudfront install-soft-delete --bucket squad-vehicle-guide.gheotic.com",
-    "deploy": "deploy-aws-s3-cloudfront --bucket squad-vehicle-guide.gheotic.com --source ./dist --acl public-read"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "deploy-aws-s3-cloudfront": "^3.3.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
