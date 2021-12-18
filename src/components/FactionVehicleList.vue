@@ -44,6 +44,7 @@
                 max-width="150px"
                 contain
                 :src="item.thumbnail"
+                @error="setAltImg"
               ></v-img>
             </v-list-item>
             <v-divider class="vehicle-list-divider"></v-divider>
@@ -57,8 +58,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: "FactionVehicleList",
   props: {
@@ -66,7 +65,13 @@ export default {
     flagImage: String,
     vehicles: Array,
   },
-
+  methods: {
+    setAltImg(e) {
+      console.log(e);
+      e.target.src =
+        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png";
+    },
+  },
 };
 </script>
 

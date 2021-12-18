@@ -3,12 +3,14 @@ import vehicleJson from "@/assets/vehicles.json";
 
 import { Vehicle, VehicleModel } from "@/models/vehicle.model";
 import FactionsRepo from '@/services/FactionsRepo';
-import { VehicleImageModel } from "../models/vehicle.model";
+import { VehicleImageModel } from '../models/vehicle.model';
 import { FactionModel } from '../models/faction.model';
 
-const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
+// const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
+const BASE_URL = "http://localhost:8081";
 
-const MissingImage = "/missing-image.jpg";
+const MissingImage = `${BASE_URL}/missing-image.jpg`;
+
 
 
 class VehicleRepo {
@@ -16,63 +18,25 @@ class VehicleRepo {
 
     constructor() {
         const list: Vehicle[] = [];
-
         for (const [key, value] of Object.entries(vehicleJson)) {
 
             const entry = value as {
                 name: string,
                 thumbnail: string,
                 factions: string[],
-                images: {
-                    real: any,
-                    armourModel: any,
-                }
             }
 
             const id = key;
             const name = entry.name;
-
-            const thumbnail = entry.thumbnail ? entry.thumbnail : MissingImage;
-
-            const thumbnailUrl = `${BASE_URL}/${thumbnail}`;
-
-            // Real images
-            const entryImagesReal = entry.images.real;
-
-            const realImgBack = entryImagesReal.back ? entryImagesReal.back : MissingImage;
-            const realImgFront = entryImagesReal.front ? entryImagesReal.front : MissingImage;
-            const realImgRight = entryImagesReal.right ? entryImagesReal.right : MissingImage;
-            const realImgLeft = entryImagesReal.left ? entryImagesReal.left : MissingImage;
-            const realImgTop = entryImagesReal.top ? entryImagesReal.top : MissingImage;
-
-            const realVehicleImageModel: VehicleImageModel = {
-                back: `${BASE_URL}/${realImgBack}`,
-                front: `${BASE_URL}/${realImgFront}`,
-                left: `${BASE_URL}/${realImgLeft}`,
-                right: `${BASE_URL}/${realImgRight}`,
-                top: `${BASE_URL}/${realImgTop}`,
-            }
-
-            // Armour images
-            const entryImagesArmour = entry.images.armourModel;
-
-            const armourImgBack = entryImagesArmour.back ? entryImagesArmour.back : MissingImage;
-            const armourImgFront = entryImagesArmour.front ? entryImagesArmour.front : MissingImage;
-            const armourImgRight = entryImagesArmour.right ? entryImagesArmour.right : MissingImage;
-            const armourImgLeft = entryImagesArmour.left ? entryImagesArmour.left : MissingImage;
-            const armourImgTop = entryImagesArmour.top ? entryImagesArmour.top : MissingImage;
-
-            const armourVehicleImageModel: VehicleImageModel = {
-                back: `${BASE_URL}/${armourImgBack}`,
-                front: `${BASE_URL}/${armourImgFront}`,
-                left: `${BASE_URL}/${armourImgLeft}`,
-                right: `${BASE_URL}/${armourImgRight}`,
-                top: `${BASE_URL}/${armourImgTop}`,
-            }
+            
+            const realVehicleImageModel = this.getVehicleImageModel(id, "real");
+            const armourVehicleImageModel = this.getVehicleImageModel(id, "armour");
+            const internalVehicleImageModel = this.getVehicleImageModel(id, "internal");
 
             const vehicleModel = new VehicleModel(
                 realVehicleImageModel,
                 armourVehicleImageModel,
+                internalVehicleImageModel,
             )
 
             const factions: FactionModel[] = [];
@@ -87,7 +51,7 @@ class VehicleRepo {
             const vehicle = new Vehicle(
                 id,
                 name,
-                thumbnailUrl,
+                realVehicleImageModel.right ? realVehicleImageModel.right : MissingImage,
                 vehicleModel,
                 factions,
             );
@@ -98,6 +62,24 @@ class VehicleRepo {
 
         this._vehicles = list;
     }
+
+    public getImageName(vehId: string, side: string, type: string) {
+        const imageName = `${vehId}-${type}-${side}.jpg`;
+        const path = `vehicles/${vehId}/${type}`;
+        return `${BASE_URL}/${path}/${imageName}`;
+    }
+
+    private getVehicleImageModel(vehId: string, type: string) : VehicleImageModel {
+        return  {
+            back: this.getImageName(vehId, "back", type),
+            front: this.getImageName(vehId, "front", type),
+            left: this.getImageName(vehId, "left", type),
+            right: this.getImageName(vehId, "right", type),
+            top: this.getImageName(vehId, "top", type),
+        };
+    }
+
+
 
     public get vehicles() {
         return this._vehicles;
