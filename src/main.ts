@@ -19,17 +19,17 @@ import FactionsRepo from "@/services/FactionsRepo";
 const BASE_URL = process.env.VUE_APP_RESOURCE_BASE_URL;
 console.log(process.env.NODE_ENV);
 console.log(BASE_URL);
-// const BASE_URL = "http://localhost:8081";
 
 const factionsRepo = new FactionsRepo(BASE_URL);
 const vehicleRepo = new VehicleRepo(BASE_URL, factionsRepo);
+
 
 Vue.prototype.$vehicleRepo = vehicleRepo;
 Vue.prototype.$factionsRepo = factionsRepo;
 
 new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
+    router,
+    store,
+    vuetify,
+    render: h => h(App)
 }).$mount("#app");

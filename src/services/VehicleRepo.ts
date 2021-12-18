@@ -9,16 +9,18 @@ import axios from 'axios';
 
 
 export default class VehicleRepo {
-    private _vehicles: Vehicle[];
+    private _vehicles: Vehicle[] = [];
     private _BASE_URL: string;
     private _missingImage: string;
     private _factionRepo: FactionsRepo;
 
-    constructor(BASE_URL: string, factionRepo : FactionsRepo) {
+    constructor(BASE_URL: string, factionRepo: FactionsRepo) {
         this._BASE_URL = BASE_URL;
         this._missingImage = `${BASE_URL}/missing-image.jpg`;
         this._factionRepo = factionRepo;
-        
+    }
+
+    public load() {
         const list: Vehicle[] = [];
         for (const [key, value] of Object.entries(vehicleJson)) {
 
@@ -83,7 +85,7 @@ export default class VehicleRepo {
         };
     }
 
-    public async getDescription(vehId: string) : Promise<string | undefined> {
+    public async getDescription(vehId: string): Promise<string | undefined> {
         const url = `${this._BASE_URL}/vehicles/${vehId}/description.md`;
 
         console.log(url);
@@ -92,12 +94,12 @@ export default class VehicleRepo {
             method: 'get',
             url: url,
         })
-        .then((result) => {
-            return result.data;
-        })
-        .catch((error) => {
-            return undefined;
-        })
+            .then((result) => {
+                return result.data;
+            })
+            .catch((error) => {
+                return undefined;
+            })
     }
 
 
