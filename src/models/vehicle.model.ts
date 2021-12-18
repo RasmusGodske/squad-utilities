@@ -11,13 +11,16 @@ export type VehicleImageModel = {
 export class VehicleModel {
     private _real: VehicleImageModel;
     private _armour: VehicleImageModel;
+    private _internal: VehicleImageModel;
 
     constructor(
         real: VehicleImageModel,
         armour: VehicleImageModel,
+        internal: VehicleImageModel,
     ) {
         this._real = real;
         this._armour = armour;
+        this._internal = internal;
     }
 
     public get real() {
@@ -26,6 +29,10 @@ export class VehicleModel {
 
     public get armour() {
         return this._armour;
+    }
+
+    public get internal() {
+        return this._internal;
     }
 }
 
