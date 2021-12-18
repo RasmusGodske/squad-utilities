@@ -210,19 +210,31 @@
         lg=4
         md=12
       >
-        <vehicle-info-faction-list :factions="vehicle.factions" />
+        <v-row>
+          <v-col>
+            <vehicle-info-faction-list :factions="vehicle.factions" />
+
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+            <vehicle-info-description :vehId="this.$route.params.id" />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import VehicleRepo from "@/services/VehicleRepo";
 import VehicleInfoFactionList from "@/components/VehicleInfoFactionList.vue";
+import VehicleInfoDescription from "@/components/VehicleInfoDescription.vue";
 export default {
   name: "Home",
   components: {
     VehicleInfoFactionList,
+    VehicleInfoDescription,
   },
   data: () => {
     return {
@@ -235,8 +247,7 @@ export default {
     };
   },
   created: function () {
-    this.vehicle = VehicleRepo.getVehicleByID(this.$route.params.id);
-    console.log("this.vehicle", this.vehicle);
+    this.vehicle = this.$vehicleRepo.getVehicleByID(this.$route.params.id);
   },
   watch: {
     currentPreviewLeftTab: function (newVal) {
@@ -245,7 +256,6 @@ export default {
           "currentPreviewLeftTab",
           this.currentPreviewLeftTab
         );
-        console.log("currentPreviewLeftTab", this.currentPreviewLeftTab);
       }
     },
     currentPreviewRightTab: function (newVal) {
@@ -254,15 +264,11 @@ export default {
           "currentPreviewRightTab",
           this.currentPreviewRightTab
         );
-        console.log("currentPreviewRightTab", this.currentPreviewRightTab);
       }
     },
   },
   mounted() {
     this.loadSettings();
-
-    console.log("this.currentPreviewLeftTab", this.currentPreviewLeftTab);
-    console.log("this.currentPreviewLeftTab", this.currentPreviewLeftTab);
   },
   methods: {
     loadSettings() {

@@ -5,30 +5,11 @@
     elevation="4"
   >
     <v-toolbar color="primary">
-      <v-toolbar-title>Factions</v-toolbar-title>
+      <v-toolbar-title>Description</v-toolbar-title>
     </v-toolbar>
 
-    <v-simple-table>
-      <template v-slot:default>
-        <tbody>
-          <tr
-            v-for="faction in factions"
-            :key="faction.id"
-            class="faction-tr"
-          >
-            <td>{{ faction.name }}</td>
-            <td>
-              <v-img
-                class="faction-flag"
-                contain
-                :aspect-ratio="16/9"
-                :src="faction.flag_image"
-              ></v-img>
-            </td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+    <vue-simple-markdown class="markdown" :source="description"></vue-simple-markdown>
+
   </v-card>
 </template>
 
@@ -36,33 +17,34 @@
 export default {
   name: "VehicleInfoDescription",
   components: {},
-  props: {
-    factions: Array,
-  },
+    props: {
+      vehId: String,
+    },
   data: () => {
-    return {};
+    return {
+      description: `Fetching description`,
+      noDescription: `## No description found`
+    };
+  },
+  methods: {
+    async loadDescription() {
+        const description = await this.$vehicleRepo.getDescription(this.vehId);
+        if (description !== undefined) {
+            this.description = description;
+        } else {
+            this.description = `No description found.`;
+        }
+    }
   },
   created: function () {
-    console.log("this.factions", this.factions);
+    this.loadDescription();
   },
 };
 </script>
 
 <style scoped>
-.faction-title {
-  padding-bottom: 0;
-}
-
-.faction-item {
-  margin: 0.1rem;
-}
-
-.faction-flag {
-  width: auto;
-  height: 2rem;
-}
-/* Remove Hover effect on table */
-.faction-tr:hover {
-  background-color: unset !important;
+.markdown {
+    color: white;
+    padding: 1rem;
 }
 </style>
