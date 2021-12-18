@@ -1,0 +1,41 @@
+name: Auto Merge Pull Reqeust
+
+env:
+  PR_HEAD_BRANCH_PREFIX: "automated/github_actions/bump-" # The branch prefix being merged from
+  PR_BASE_BRANCH: "development" # Branch being merged to
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  correct_source_branch:
+    name: Check source branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check head_ref branch is correct
+        if: ${{ startsWith(github.head_ref, env.PR_HEAD_BRANCH_PREFIX) }}
+        run: echo "Check"
+
+  correct_base_branch:
+    name: Check base branch
+    needs: [correct_source_branch]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check base_ref branch is correct
+        if: github.base_ref == env.PR_BASE_BRANCH
+        run: echo "Check"
+  
+  merge:
+    name: Merge Pull Request
+    needs: [correct_base_branch]
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.14.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_METHOD: "squash"
+          MERGE_DELETE_BRANCH: true
+          MERGE_LABELS: "automerge" # label indicating the pullrequest can be automerged
