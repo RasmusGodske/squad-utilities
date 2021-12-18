@@ -22,12 +22,13 @@ class VehicleRepo {
 
             const entry = value as {
                 name: string,
-                thumbnail: string,
+                categori: string,
                 factions: string[],
             }
 
             const id = key;
             const name = entry.name;
+            const categori = entry.categori;
             
             const realVehicleImageModel = this.getVehicleImageModel(id, "real");
             const armourVehicleImageModel = this.getVehicleImageModel(id, "armour");
@@ -54,6 +55,7 @@ class VehicleRepo {
                 realVehicleImageModel.right ? realVehicleImageModel.right : MissingImage,
                 vehicleModel,
                 factions,
+                categori,
             );
 
             list.push(vehicle);

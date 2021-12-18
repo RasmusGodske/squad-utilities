@@ -1,49 +1,57 @@
 {
 	"MATV": {
 		"name": "MATV",
-		"factions": [
+		"categori": "Light Attack",
+        "factions": [
 			"us"
 		]
 	},
 	"M1126": {
 		"name": "M1126",
-		"factions": [
+		"categori": "APC",
+        "factions": [
 			"us"
 		]
 	},
 	"M2A3": {
 		"name": "M2A3",
-		"factions": [
+		"categori": "IFV",
+        "factions": [
 			"us"
 		]
 	},
 	"M1A2": {
 		"name": "M1A2",
-		"factions": [
+		"categori": "MBT",
+        "factions": [
 			"us"
 		]
 	},
 	"FV432": {
 		"name": "FV432",
-		"factions": [
+		"categori": "APC",
+        "factions": [
 			"uk"
 		]
 	},
 	"FV4034": {
 		"name": "FV4034",
-		"factions": [
+		"categori": "MBT",
+        "factions": [
 			"uk"
 		]
 	},
 	"FV510": {
 		"name": "FV510",
-		"factions": [
+		"categori": "IFV",
+        "factions": [
 			"uk"
 		]
 	},
 	"BRDM-2": {
 		"name": "BRDM-2",
-		"factions": [
+		"categori": "Light Attack",
+        "factions": [
 			"rus",
 			"irregularmilitia",
 			"insurgent",
@@ -52,14 +60,16 @@
 	},
 	"MT-LBM_6MA": {
 		"name": "MT-LBM 6MA",
-		"factions": [
+		"categori": "APC",
+        "factions": [
 			"rus",
 			"mea"
 		]
 	},
 	"MT-LBM_6MB": {
 		"name": "MT-LBM 6MB",
-		"factions": [
+		"categori": "IFV",
+        "factions": [
 			"irregularmilitia",
 			"mea",
 			"insurgent"
@@ -67,41 +77,47 @@
 	},
 	"BTR-80": {
 		"name": "BTR-80",
-		"factions": [
+		"categori": "APC",
+        "factions": [
 			"irregularmilitia",
 			"rus"
 		]
 	},
 	"BTR-82": {
 		"name": "BTR-82",
-		"factions": [
+		"categori": "IFV",
+        "factions": [
 			"rus"
 		]
 	},
 	"BMP-1": {
 		"name": "BMP-1",
-		"factions": [
+		"categori": "IFV",
+        "factions": [
 			"rus",
 			"irregularmilitia"
 		]
 	},
 	"T72B3": {
 		"name": "T72B3",
-		"factions": [
+		"categori": "MBT",
+        "factions": [
 			"rus",
 			"mea"
 		]
 	},
 	"Armoured_technical": {
 		"name": "Armoured Technical",
-		"factions": [
+		"categori": "Light Attack",
+        "factions": [
 			"irregularmilitia",
 			"insurgent"
 		]
 	},
 	"T-62": {
 		"name": "T62",
-		"factions": [
+		"categori": "MBT",
+        "factions": [
 			"irregularmilitia",
 			"insurgent",
 			"mea"

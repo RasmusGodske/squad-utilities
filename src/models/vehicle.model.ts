@@ -42,6 +42,7 @@ export class Vehicle {
     private _thumbnail: string;
     private _model : VehicleModel;
     private _factions: FactionModel[];
+    private _categori: string;
     
 
     constructor(
@@ -50,12 +51,14 @@ export class Vehicle {
         thumbnail: string,
         model: VehicleModel,
         factions: FactionModel[],
+        categori: string,
     ) {
         this._id = id;
         this._name = name;
         this._thumbnail = thumbnail;
         this._model = model;
         this._factions = factions;
+        this._categori = categori;
     }
 
     public get id() {
@@ -76,6 +79,10 @@ export class Vehicle {
 
     public get factions() {
         return this._factions;
+    }
+
+    public get categori() {
+        return this._categori;
     }
 
     public inFaction(factionId: string) : boolean {

@@ -13,7 +13,7 @@
           height="100%"
         >
           <v-toolbar color="primary">
-            <v-toolbar-title @click="loadSettings">{{ $route.params.id }}</v-toolbar-title>
+            <v-toolbar-title @click="loadSettings">{{ vehicle.name }} ({{vehicle.categori}})</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
 
@@ -210,43 +210,7 @@
         lg=4
         md=12
       >
-        <v-card
-          flat
-          tile
-          elevation="4"
-          height="100%"
-        >
-          <v-toolbar color="primary">
-            <v-toolbar-title>Info</v-toolbar-title>
-          </v-toolbar>
-
-          <v-card-title class="text-h4 faction-title">
-            Factions
-          </v-card-title>
-
-          <v-row
-            align="center"
-            justify="end"
-            v-for="faction in vehicle.factions"
-            :key="faction.id"
-            class="faction-item"
-          >
-            <v-col
-              col=10
-              class="faction-item"
-            >
-              <h4>{{faction.name}}</h4>
-            </v-col>
-            <v-col col=2>
-              <v-img
-                class="faction-flag"
-                contain
-                :aspect-ratio="16/9"
-                :src="faction.flag_image"
-              ></v-img>
-            </v-col>
-          </v-row>
-        </v-card>
+        <vehicle-info-faction-list :factions="vehicle.factions" />
       </v-col>
     </v-row>
   </v-container>
@@ -254,10 +218,12 @@
 
 <script>
 import VehicleRepo from "@/services/VehicleRepo";
-
+import VehicleInfoFactionList from "@/components/VehicleInfoFactionList.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    VehicleInfoFactionList,
+  },
   data: () => {
     return {
       vehicle: {},
@@ -340,18 +306,5 @@ export default {
 .side-title {
   text-align: center;
   margin-bottom: 0.5rem;
-}
-
-.faction-title {
-  padding-bottom: 0;
-}
-
-.faction-item {
-  margin: 0.1rem;
-}
-
-.faction-flag {
-  width: auto;
-  height: 2rem;
 }
 </style>
