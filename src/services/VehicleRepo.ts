@@ -7,22 +7,20 @@ import { VehicleImageModel } from '../models/vehicle.model';
 import { FactionModel } from '../models/faction.model';
 import axios from 'axios';
 
-// const BASE_URL = "https://raw.githubusercontent.com/RasmusGodske/squad-utilities-resources/main";
-// const BASE_URL = "http://localhost:8081";
-
-// const MissingImage = `${BASE_URL}/missing-image.jpg`;
-
-
 
 export default class VehicleRepo {
-    private _vehicles: Vehicle[];
+    private _vehicles: Vehicle[] = [];
     private _BASE_URL: string;
     private _missingImage: string;
+    private _factionRepo: FactionsRepo;
 
-    constructor(BASE_URL: string) {
+    constructor(BASE_URL: string, factionRepo: FactionsRepo) {
         this._BASE_URL = BASE_URL;
         this._missingImage = `${BASE_URL}/missing-image.jpg`;
-        
+        this._factionRepo = factionRepo;
+    }
+
+    public load() {
         const list: Vehicle[] = [];
         for (const [key, value] of Object.entries(vehicleJson)) {
 
@@ -49,7 +47,7 @@ export default class VehicleRepo {
             const factions: FactionModel[] = [];
 
             for (const factionId of entry.factions) {
-                const faction = FactionsRepo.getFactionByID(factionId);
+                const faction = this._factionRepo.getFactionByID(factionId);
                 if (faction) {
                     factions.push(faction);
                 }
@@ -87,7 +85,7 @@ export default class VehicleRepo {
         };
     }
 
-    public async getDescription(vehId: string) : Promise<string | undefined> {
+    public async getDescription(vehId: string): Promise<string | undefined> {
         const url = `${this._BASE_URL}/vehicles/${vehId}/description.md`;
 
         console.log(url);
@@ -96,12 +94,12 @@ export default class VehicleRepo {
             method: 'get',
             url: url,
         })
-        .then((result) => {
-            return result.data;
-        })
-        .catch((error) => {
-            return undefined;
-        })
+            .then((result) => {
+                return result.data;
+            })
+            .catch((error) => {
+                return undefined;
+            })
     }
 
 

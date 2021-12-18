@@ -101,8 +101,6 @@
 
 <script>
 import FactionVehicleList from "@/components/FactionVehicleList.vue";
-import FactionsRepo from "@/services/FactionsRepo";
-
 
 export default {
   name: "Home",
@@ -114,17 +112,27 @@ export default {
       factions: [],
     };
   },
+  methods: {
+    async load() {
+      await this.$factionsRepo.load();
+      await this.$vehicleRepo.load();
+
+      const factions = this.$factionsRepo.factions;
+
+      for (const faction of factions) {
+        const factionVehicles = this.$vehicleRepo.getVehiclesInFaction(
+          faction.id
+        );
+
+        this.factions.push({
+          faction: faction,
+          vehicles: factionVehicles,
+        });
+      }
+    },
+  },
   created: function () {
-    const factions = FactionsRepo.factions;
-
-    for (const faction of factions) {
-      const factionVehicles = this.$vehicleRepo.getVehiclesInFaction(faction.id);
-
-      this.factions.push({
-        faction: faction,
-        vehicles: factionVehicles,
-      });
-    }
+      this.load();
   },
 };
 </script>
